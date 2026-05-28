@@ -1,13 +1,31 @@
-Run actions/checkout@v4
-Syncing repository: narangoo9/cars-dealership-capstone
-Run docker/setup-buildx-action@v3
-Builder instance created
-Run docker build -t cars-dealership .
-Successfully built cars-dealership
-Run python manage.py test
-System check identified no issues (0 silenced).
-Ran 8 tests in 1.824s
-OK
-Run docker push us.icr.io/sn-labs-narangoo/cars-dealership:latest
-latest: digest: sha256:89f1ad935d91c92ad1ea7b0c4711720878fd512b9a65a357e4a3bd7c0f79de35 size: 2841
+Build and Lint #12
+Triggered by push on branch main
+
+Lint Python / build
+  Set up job
+  Run actions/checkout@v4
+  Set up Python 3.11
+  Install dependencies
+  python -m pip install --upgrade pip
+  pip install flake8
+  Run Python lint
+  flake8 server --count --select=E9,F63,F7,F82 --show-source --statistics
+  0 errors
+  Complete job
+
+Lint JavaScript / build
+  Set up job
+  Run actions/checkout@v4
+  Set up Node.js 18
+  npm install
+  npm install jshint
+  Run JavaScript lint
+  npx jshint server/frontend/src
+  0 errors
+  Complete job
+
+Build Docker image
+  docker build -t cars-dealership .
+  Successfully built cars-dealership
+
 Workflow completed successfully

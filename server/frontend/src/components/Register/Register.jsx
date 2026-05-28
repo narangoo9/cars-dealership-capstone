@@ -3,8 +3,8 @@ import React, { useState } from "react";
 const Register = () => {
   const [form, setForm] = useState({
     username: "",
-    firstName: "",
-    lastName: "",
+    first_name: "",
+    last_name: "",
     email: "",
     password: "",
   });
@@ -26,12 +26,22 @@ const Register = () => {
     <main className="container">
       <h1>Sign-up</h1>
       <form onSubmit={register}>
-        <input name="username" placeholder="Username" value={form.username} onChange={handleChange} />
-        <input name="firstName" placeholder="First Name" value={form.firstName} onChange={handleChange} />
-        <input name="lastName" placeholder="Last Name" value={form.lastName} onChange={handleChange} />
-        <input name="email" placeholder="Email" type="email" value={form.email} onChange={handleChange} />
-        <input name="password" placeholder="Password" type="password" value={form.password} onChange={handleChange} />
-        <button type="submit">Register</button>
+        <label htmlFor="username">Username</label>
+        <input id="username" name="username" type="text" placeholder="Username" value={form.username} onChange={handleChange} />
+
+        <label htmlFor="first_name">First Name</label>
+        <input id="first_name" name="first_name" type="text" placeholder="First Name" value={form.first_name} onChange={handleChange} />
+
+        <label htmlFor="last_name">Last Name</label>
+        <input id="last_name" name="last_name" type="text" placeholder="Last Name" value={form.last_name} onChange={handleChange} />
+
+        <label htmlFor="email">Email</label>
+        <input id="email" name="email" placeholder="Email" type="email" value={form.email} onChange={handleChange} />
+
+        <label htmlFor="password">Password</label>
+        <input id="password" name="password" placeholder="Password" type="password" value={form.password} onChange={handleChange} />
+
+        <button className="btn btn-primary" type="submit">Register</button>
       </form>
     </main>
   );
