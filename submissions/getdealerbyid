@@ -1,0 +1,2 @@
+curl -X GET http://127.0.0.1:8000/djangoapp/get_dealer/15
+{"id":15,"city":"Wichita","state":"Kansas","st":"KS","address":"2200 Auto Plaza Drive","zip":"67202","lat":37.6872,"long":-97.3301,"short_name":"Wichita Motors","full_name":"Wichita Motors Cars Dealership"}

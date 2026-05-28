@@ -1,0 +1,2 @@
+curl -X GET http://127.0.0.1:8000/djangoapp/get_dealer_reviews/15
+[{"id":1,"dealership":15,"name":"Narangoo","purchase":true,"review":"Fantastic services","purchase_date":"2024-05-15","car_make":"Toyota","car_model":"Camry","car_year":2024,"sentiment":"positive"}]

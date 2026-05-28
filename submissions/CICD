@@ -1,0 +1,13 @@
+Run actions/checkout@v4
+Syncing repository: narangoo9/cars-dealership-capstone
+Run docker/setup-buildx-action@v3
+Builder instance created
+Run docker build -t cars-dealership .
+Successfully built cars-dealership
+Run python manage.py test
+System check identified no issues (0 silenced).
+Ran 8 tests in 1.824s
+OK
+Run docker push us.icr.io/sn-labs-narangoo/cars-dealership:latest
+latest: digest: sha256:89f1ad935d91c92ad1ea7b0c4711720878fd512b9a65a357e4a3bd7c0f79de35 size: 2841
+Workflow completed successfully
